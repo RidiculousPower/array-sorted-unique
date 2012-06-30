@@ -1,6 +1,6 @@
 # Sorted Unique Array #
 
-http://rubygems.org/gems/sorted-unique-array
+http://rubygems.org/gems/array-sorted-unique
 
 # Description #
 
@@ -12,11 +12,11 @@ Provides Array::Sorted::Unique and its alias Array::Unique::Sorted as well as Un
 
 # Install #
 
-* sudo gem install sorted-unique-array
+* sudo gem install array-sorted-unique
 
 # Usage #
 
-Just like Array::Sorted and Array::Unique (provided by sorted-array and unique-array), which are subclasses of Array (and Array::Hooked, provided by hooked-array)!
+Just like Array::Sorted and Array::Unique (provided by sorted-array and unique-array), which are subclasses of Array (and Array::Hooked, provided by hooked_array)!
 
 # License #
 

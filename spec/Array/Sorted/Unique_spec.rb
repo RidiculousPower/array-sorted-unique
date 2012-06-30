@@ -1,5 +1,5 @@
 
-require_relative '../../../lib/sorted-unique-array.rb'
+require_relative '../../../lib/array-sorted-unique.rb'
 
 describe ::Array::Sorted::Unique do
 
