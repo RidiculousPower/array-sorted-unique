@@ -4,9 +4,9 @@ Gem::Specification.new do |spec|
 
   spec.name                      =  'array-sorted-unique'
   spec.rubyforge_project         =  'array-sorted-unique'
-  spec.version                   =  '1.0.0'
+  spec.version                   =  '1.1.0'
 
-  spec.summary                   =  "Provides Array::Sorted::Unique and its alias Array::Unique::Sorted as well as UniqueSortedArray and its alias SortedUniqueArray."
+  spec.summary                   =  "Provides Array::Sorted::Unique and its alias Array::Unique::Sorted."
   spec.description               =  "A subclass of Array::Sorted and Array::Unique (and therefore also Array::Hooked)."
 
   spec.authors                   =  [ 'Asher' ]
