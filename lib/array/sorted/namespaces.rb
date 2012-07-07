@@ -1,10 +1,7 @@
 
-class ::Array::Sorted::Unique < ::Array::Unique
+class ::Array::Sorted < ::Array::Hooked
+  class Unique < ::Array::Hooked
+    
+  end
 end
-
-class ::UniqueArray::Sorted < ::Array::Sorted::Unique
-end
-
 ::Array::Unique::Sorted = ::Array::Sorted::Unique
-
-::SortedArray::Unique = ::UniqueArray::Sorted
