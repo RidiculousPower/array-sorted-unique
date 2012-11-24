@@ -1,8 +1,0 @@
-
-== 6/14/2012
-
-Initial release - split from compositing-unique-array.
-
-== 6/30/2012
-
-Renamed from sorted-unique-array to array-sorted-unique. File schema updated to reflect gem name.
