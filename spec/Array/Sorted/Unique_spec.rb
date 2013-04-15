@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 
 require_relative '../../../lib/array-sorted-unique.rb'
 
@@ -446,7 +447,7 @@ describe ::Array::Sorted::Unique do
 
     sorted_unique_array = ::Array::Sorted::Unique.new
 
-    sorted_unique_array += :A
+    sorted_unique_array.push( :A )
     sorted_unique_array.should == [ :A ]
 
     sorted_unique_array.unshift( :B )
@@ -462,13 +463,13 @@ describe ::Array::Sorted::Unique do
 
     sorted_unique_array = ::Array::Sorted::Unique.new
 
-    sorted_unique_array += :A
+    sorted_unique_array.push( :A )
     sorted_unique_array.should == [ :A ]
 
     sorted_unique_array.pop.should == :A
     sorted_unique_array.should == [ ]
 
-    sorted_unique_array += :B
+    sorted_unique_array.push( :B )
     sorted_unique_array.should == [ :B ]
 
   end
@@ -481,13 +482,13 @@ describe ::Array::Sorted::Unique do
 
     sorted_unique_array = ::Array::Sorted::Unique.new
 
-    sorted_unique_array += :A
+    sorted_unique_array.push( :A )
     sorted_unique_array.should == [ :A ]
 
     sorted_unique_array.shift.should == :A
     sorted_unique_array.should == [ ]
 
-    sorted_unique_array += :B
+    sorted_unique_array.push( :B )
     sorted_unique_array.should == [ :B ]
 
   end
@@ -500,13 +501,13 @@ describe ::Array::Sorted::Unique do
 
     sorted_unique_array = ::Array::Sorted::Unique.new
 
-    sorted_unique_array += :A
+    sorted_unique_array.push( :A )
     sorted_unique_array.should == [ :A ]
 
     sorted_unique_array.slice!( 0, 1 ).should == [ :A ]
     sorted_unique_array.should == [ ]
 
-    sorted_unique_array += :B
+    sorted_unique_array.push( :B )
     sorted_unique_array.should == [ :B ]
 
   end
@@ -519,13 +520,13 @@ describe ::Array::Sorted::Unique do
 
     sorted_unique_array = ::Array::Sorted::Unique.new
 
-    sorted_unique_array += :A
+    sorted_unique_array.push( :A )
     sorted_unique_array.should == [ :A ]
 
     sorted_unique_array.clear
     sorted_unique_array.should == [ ]
 
-    sorted_unique_array += :B
+    sorted_unique_array.push( :B )
     sorted_unique_array.should == [ :B ]
 
   end
@@ -538,7 +539,7 @@ describe ::Array::Sorted::Unique do
     
     class ::Array::Sorted::Unique::SubMockPreSet < ::Array::Sorted::Unique
       
-      def pre_set_hook( index, object, is_insert = false )
+      def pre_set_hook( index, object, is_insert, length )
         return :some_other_value
       end
       
@@ -560,7 +561,7 @@ describe ::Array::Sorted::Unique do
 
     class ::Array::Sorted::Unique::SubMockPostSet < ::Array::Sorted::Unique
       
-      def post_set_hook( index, object, is_insert = false )
+      def post_set_hook( index, object, is_insert, length )
         return :some_other_value
       end
       
@@ -568,7 +569,7 @@ describe ::Array::Sorted::Unique do
     
     sorted_unique_array = ::Array::Sorted::Unique::SubMockPostSet.new
 
-    sorted_unique_array.push( :some_value ).should == [ :some_other_value ]
+    sorted_unique_array.push( :some_value )
     
     sorted_unique_array.should == [ :some_value ]
     
@@ -582,7 +583,7 @@ describe ::Array::Sorted::Unique do
     
     class ::Array::Sorted::Unique::SubMockPreGet < ::Array::Sorted::Unique
       
-      def pre_get_hook( index )
+      def pre_get_hook( index, length )
         return false
       end
       
@@ -605,7 +606,7 @@ describe ::Array::Sorted::Unique do
 
     class ::Array::Sorted::Unique::SubMockPostGet < ::Array::Sorted::Unique
       
-      def post_get_hook( index, object )
+      def post_get_hook( index, object, length )
         return :some_other_value
       end
       
